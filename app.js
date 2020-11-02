@@ -14,7 +14,18 @@ document.addEventListener('DOMContentLoaded', () => {
          if(currentPlayer === 1){
            squares[index].classList.add('taken')
            squares[index].classList.add('player-one')
+           //and then change the current player
+           currentPlayer = 2
+           displayCurrentPlayer.innerHTML = currentPlayer
+         } else if (currentPlayer === 2){
+           squares[index].classList.add('taken')
+           squares[index].classList.add('player-two')
+           currentPlayer = 1
+           displayCurrentPlayer.innerHTML = currentPlayer
          }
+         //if the square below your current square is not taken, you cannot go here
+       } else {
+         alert('cant go there')
        }
     }
   })
