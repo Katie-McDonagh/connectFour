@@ -50,4 +50,24 @@ document.addEventListener('DOMContentLoaded', () => {
           const square2 = squares[winningArrays[y][1]];
           const square3 = squares[winningArrays[y][2]];
           const square4 = squares[winningArrays[y][3]];
+
+        {  //now check those arrays to see if they all have the class of player-one
+            if(square1.classList.contains('player-one') &&
+            square2.classList.contains('player-one') &&
+            square3.classList.contains('player-one') &&
+            square4.classList.contains('player-one')) {
+             //if they do, player-one is passed as the winner
+              result.innerHTML = 'Player one wins!'
+            //remove ability to change result
+            } 
+            //now check to see if they all have the classname player two
+            else if (square1.classList.contains('player-two') &&
+            square2.classList.contains('player-two') &&
+            square3.classList.contains('player-two') &&
+            square4.classList.contains('player-two')) {
+            //if they do, player-two is passed as the winner as well as the chip positions
+            result.innerHTML = 'Player two wins!'
+            }
+        }
+        }}
   }
